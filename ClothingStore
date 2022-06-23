@@ -1,0 +1,38 @@
+--This project was completed as a part of the Khan Academy's Intro to SQL course. For this project I created a table for a clothing store that contained
+the data on the inventory of clothing including the id, clothing name, size, color, and quantity. I then asked a few questions of the data.
+
+
+
+
+CREATE TABLE ClothingStore (id INTEGER PRIMARY KEY, clothing TEXT, size TEXT, color TEXT, quantity INTEGER);
+INSERT INTO ClothingStore VALUES (1, "shirt", "small", "blue", 6);
+INSERT INTO ClothingStore VALUES (2, "shirt", "medium", "blue", 5);
+INSERT INTO ClothingStore VALUES (3, "shirt", "large", "blue", 7);
+INSERT INTO ClothingStore VALUES (4, "shirt", "small", "red", 3);
+INSERT INTO ClothingStore VALUES (5, "shirt", "medium", "red", 5);
+INSERT INTO ClothingStore VALUES (6, "shirt", "large", "red", 2);
+INSERT INTO ClothingStore VALUES (7, "shorts", "small", "green", 4);
+INSERT INTO ClothingStore VALUES (8, "shorts", "medium", "green", 7);
+INSERT INTO ClothingStore VALUES (9, "shorts", "large", "green", 8);
+INSERT INTO ClothingStore VALUES (10, "shorts", "small", "purple", 4);
+INSERT INTO ClothingStore VALUES (11, "shorts", "medium", "purple", 7);
+INSERT INTO ClothingStore VALUES (12, "shorts", "large", "purple", 8);
+INSERT INTO ClothingStore VALUES (13, "pants", "small", "grey", 7);
+INSERT INTO ClothingStore VALUES (14, "pants", "medium", "grey", 3);
+INSERT INTO ClothingStore VALUES (15, "pants", "large", "grey", 9);
+
+Select *
+From ClothingStore
+Order By quantity;
+
+Select *
+From ClothingStore
+Where color = "green";
+
+Select *
+From ClothingStore
+Where size = "medium";
+
+Select clothing, SUM(quantity)
+From ClothingStore
+Group By clothing;
