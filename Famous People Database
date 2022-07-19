@@ -1,0 +1,59 @@
+--This project was completed as a part of Kahn Academy's SQL course.
+I created two tables about famous people, which included data about the celebrity's name, age, career, marital status, and net worth. 
+I then used a JOIN function to display information from both tables.--
+
+CREATE TABLE famous_people 
+(id INTEGER PRIMARY KEY AUTOINCREMENT, 
+name TEXT,
+age INTEGER,
+career TEXT,
+marital_status TEXT);
+
+INSERT INTO
+    famous_people (name, age, career, marital_status) VALUES ("Sam Smith", 30, "singer", "single");
+INSERT INTO
+    famous_people (name, age, career, marital_status) VALUES ("Ed Sheeran", 31, "singer", "married");
+INSERT INTO
+    famous_people (name, age, career, marital_status) VALUES ("Adele", 34, "singer", "divorced");
+INSERT INTO
+    famous_people (name, age, career, marital_status) VALUES ("Ariana Grande", 29, "singer", "married");
+INSERT INTO
+    famous_people (name, age, career, marital_status) VALUES ("Kim Kardashian", 41, "influencer", "divorced");
+INSERT INTO
+    famous_people (name, age, career, marital_status) VALUES ( "Drew Barrymore", 47, "actor", "divorced");
+INSERT INTO
+    famous_people (name, age, career, marital_status) VALUES ( "Sandra Bullock", 57, "actor", "divorced");
+INSERT INTO
+    famous_people (name, age, career, marital_status) VALUES ("Brad Pitt", 58, "actor", "divorced");
+INSERT INTO
+    famous_people (name, age, career, marital_status) VALUES ("Jennifer Aniston", 53, "actor", "divorced");
+    
+CREATE TABLE networth
+(id INTEGER PRIMARY KEY AUTOINCREMENT,
+famous_people_id INTEGER,
+net_worth INTEGER);
+
+INSERT INTO
+    networth (famous_people_id, net_worth) VALUES (1,"45 million");
+INSERT INTO
+    networth (famous_people_id, net_worth) VALUES (2,"200 million");
+INSERT INTO
+    networth (famous_people_id, net_worth) VALUES (3,"220 million");
+INSERT INTO
+    networth (famous_people_id, net_worth) VALUES (4,"200 million");
+INSERT INTO
+    networth (famous_people_id, net_worth) VALUES (5,"1.4 billion");
+INSERT INTO
+    networth (famous_people_id, net_worth) VALUES (6,"125 million");
+INSERT INTO
+    networth (famous_people_id, net_worth) VALUES (7,"250 million");
+INSERT INTO
+    networth (famous_people_id, net_worth) VALUES (8,"300 million");
+INSERT INTO
+    networth (famous_people_id, net_worth) VALUES (9,"300 million");
+    
+--What is the networth of each famous person listed in the famous people table?--
+Select famous_people.name, networth.net_worth
+From famous_people
+Join networth
+ON famous_people.id= networth.famous_people_id;
