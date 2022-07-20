@@ -37,3 +37,23 @@ From BIT_DB.FebSales Feb
 LEFT JOIN BIT_DB.customers cust
 ON FEB.orderid=cust.order_id
 Where Feb.Quantity>2
+
+Select orderdate
+From BIT_DB.FebSales
+Where orderdate between '02/13/19 00:00' AND '02/18/19 00:00'
+
+SELECT location
+FROM BIT_DB.FebSales 
+WHERE orderdate = '02/18/19 01:35'
+
+SELECT sum(quantity)
+FROM BIT_DB.FebSales 
+WHERE orderdate like '02/18/19%'
+
+SELECT distinct Product
+FROM BIT_DB.FebSales
+WHERE Product like '%Batteries%'
+
+SELECT distinct Product, Price
+FROM BIT_DB.FebSales 
+WHERE Price like '%.99'
